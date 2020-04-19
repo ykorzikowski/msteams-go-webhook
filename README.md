@@ -2,7 +2,7 @@
 
 # msteams-go-webhook
 
-Go Lang library to send messages to Slack via Incoming Webhooks.
+Go Lang library to send messages to MSTeams via Incoming Webhooks.
 
 ## Usage
 ```go
