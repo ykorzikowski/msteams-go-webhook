@@ -45,8 +45,8 @@ type Payload struct {
   Context          string                `json:"@context"`
   ThemeColor       string                `json:"themeColor"`
   Summary          string                `json:"summary"`
-  Sections         []*Section             `json:"sections"`
-  PotentialActions []*PotentialAction     `json:"potentialAction"`
+  Sections         []Section             `json:"sections"`
+  PotentialActions []PotentialAction     `json:"potentialAction"`
 }
 
 func (potentialAction *PotentialAction) AddInput(input Input) *PotentialAction {

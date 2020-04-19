@@ -16,7 +16,7 @@ func main() {
 
     section1 := msteams.Section {
       ActivityTitle: "![TestImage](https://47a92947.ngrok.io/Content/Images/default.png)Larry Bryant created a new task",
-      ActivitySubtitle: "On Project Tango",
+      ActivitySubTitle: "On Project Tango",
       ActivityImage: "https://teamsnodesample.azurewebsites.net/static/img/image5.png",
       Markdown: true
     }
