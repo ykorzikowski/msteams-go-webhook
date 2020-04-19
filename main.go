@@ -14,8 +14,8 @@ type Input struct {
 }
 
 type PotentialAction struct {
-  Type    string     `json:"@type"`
-  Name	  string     `json:"name"`
+  Type    *string     `json:"@type"`
+  Name	  *string     `json:"name"`
   Inputs  []*Input    `json:"inputs"`
   Actions []*Action   `json:"inputs"`
 
@@ -33,11 +33,11 @@ type Fact struct {
 }
 
 type Section struct {
-  ActivityTitle   	string   `json:"activityTitle"`
-  ActivitySubTitle	string   `json:"activitySubTitle"`
-  ActivityImage   	string   `json:"activityImage"`
+  ActivityTitle   	*string   `json:"activityTitle"`
+  ActivitySubTitle	*string   `json:"activitySubTitle"`
+  ActivityImage   	*string   `json:"activityImage"`
   Facts             []*Fact   `json:"facts,omitempty"`
-  Markdown          bool     `json:"markdown"`
+  Markdown          *bool     `json:"markdown"`
 }
 
 type Payload struct {
@@ -62,16 +62,6 @@ func (potentialAction *PotentialAction) AddAction(action Action) *PotentialActio
 func (section *Section) AddFact(fact Fact) *Section {
 	section.Facts = append(section.Facts, &fact)
 	return section
-}
-
-func (payload *Payload) AddSection(section Section) *Payload {
-	payload.Sections = append(payload.Sections, &section)
-	return payload
-}
-
-func (payload *Payload) AddPotentialAction(potentialAction PotentialAction) *Payload {
-	payload.PotentialActions = append(payload.PotentialActions, &potentialAction)
-	return payload
 }
 
 func redirectPolicyFunc(req gorequest.Request, via []gorequest.Request) error {
